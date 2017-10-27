@@ -1,0 +1,371 @@
+/* --------- mixins --------- */
+@mixin opensans($style : jenya) {
+	@if $style == jenya {
+		font-family: 'OpenSansRegular';
+	}
+
+	@if $style == semi {
+		font-family: 'OpenSansSemiBold';
+	}
+
+	@if $style == bold {
+		font-family: 'OpenSansBold';
+	}
+
+	@if $style == ital {
+		font-family: 'OpenSansItalic';
+	}
+
+	@if $style == ruso {
+		font-family: 'RussoOneRegular';
+	}
+
+	@if $style == ubuntu {
+		font-family: 'UbuntuCondensedRegular';
+	}
+}
+
+@mixin inlineblock ($valine: top) {
+	display: inline-block;
+	vertical-align: $valine;
+}
+
+@mixin clearfix {
+	&:before,
+	&:after {
+		content: "";
+		display: table;
+	}
+
+	&:after {
+		clear: both;
+	}
+}
+
+@mixin border-radius($radius: 5px) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+}
+
+@mixin box-shadow($string...) {
+	-webkit-box-shadow: $string;
+	-moz-box-shadow: $string;
+	box-shadow: $string;
+}
+
+@mixin transition($transition...) {
+	-webkit-transition: $transition;
+	-moz-transition: $transition;
+	-ms-transition: $transition;
+	-o-transition: $transition;
+	transition: $transition;
+}
+
+@mixin placecolor($color: #000000) {
+	&::-webkit-input-placeholder {
+		color: $color;
+	}
+	&:-moz-placeholder {
+		color: $color;
+	}
+	&::-moz-placeholder {
+		color: $color;
+	}
+	&:-ms-input-placeholder {
+		color: $color;
+	}
+}
+
+@mixin vertical-gradient($top-color: #ffffff, $bottom-color: #000000) {
+	background-color: $top-color;
+	background-image: -webkit-gradient(linear, left top, left bottom, from($top-color), to($bottom-color)); /* Chrome, Safari 4+ */
+	background-image: -webkit-linear-gradient(top, $top-color, $bottom-color); /* Chrome 10-25, iOS 5+, Safari 5.1+ */
+	background-image: -moz-linear-gradient(top, $top-color, $bottom-color); /* Firefox 3.6-15 */
+	background-image: -o-linear-gradient(top, $top-color, $bottom-color); /* Opera 11.10-12.00 */
+	background-image: linear-gradient(to bottom, $top-color, $bottom-color); /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=$top-color, EndColorStr=$bottom-color);
+}
+
+@mixin transform($transforms...) {
+	-moz-transform: $transforms;
+	-o-transform: $transforms;
+	-ms-transform: $transforms;
+	-webkit-transform: $transforms;
+	transform: $transforms;
+}
+
+/* --------- centered --------- */
+
+@mixin absolute-center {
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	position: absolute;
+}
+
+/* --------- compass sprites --------- */
+
+@mixin get-sprite($map, $sprite, $repeat: no-repeat, $height: true, $width: true) {
+	$sprite-image: sprite-file($map, $sprite);
+	$sprite-map: sprite-url($map);
+	$sprite-position: sprite-position($map, $sprite);
+	$sprite-layout: smart;
+
+	background: $sprite-map $sprite-position $repeat;
+
+	@if ($height == true) {
+		$sprite-height: image-height($sprite-image);
+		height: $sprite-height;
+	}
+
+	@if ($width == true) {
+		$sprite-width: image-width($sprite-image);
+		width: $sprite-width;
+	}
+}
+
+/* --------- responsive mixins --------- */
+
+@mixin desktop {
+	@media screen and (max-width: 1200px) {
+		@content;
+	}
+}
+
+@mixin laptop {
+	@media screen and (max-width: 992px) {
+		@content;
+	}
+}
+
+@mixin tablets {
+	@media screen and (max-width: 768px) {
+		@content;
+	}
+}
+
+@mixin small_tablets {
+	@media screen and (max-width: 640px) {
+		@content;
+	}
+}
+
+@mixin phones {
+	@media screen and (max-width: 480px) {
+		@content;
+	}
+}
+
+@mixin small_phones {
+	@media screen and (max-width: 320px) {
+		@content;
+	}
+}
+
+@mixin main($width) {
+  @media screen and (max-width: $width) {
+    @content;
+  }
+}
+
+// variable
+$outline: 1px solid grey;
+
+// adjustment
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	font-size: 62.5%;
+}
+
+body {
+	@include opensans(jenya);
+	line-height: 1.6;
+}
+
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+
+	li {
+		padding: 0;
+		margin: 0;
+		list-style: none outside none;
+	}
+}
+
+button, 
+button:active, 
+button:focus {
+    outline: none;
+}
+
+input::-webkit-input-placeholder {color:#fff;}
+input::-moz-placeholder {color:#fff;}/* Firefox 19 */
+input:-moz-placeholder {color:#fff;}/* Firefox 18 */
+input:-ms-input-placeholder {color:#fff;}
+
+p {
+	padding: 0;
+	margin: 0;
+}
+
+// base style flex
+.main {
+	position: relative;
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	width: 100%;
+}
+
+// header
+.header {
+	background-color: #000;
+	height: 55px;
+	position: relative;
+	min-height: 715px;
+}
+
+.header .row {
+	height: 55px;
+}
+
+// header nav area
+.header__logo {
+	margin-top: 17px;
+}
+
+.header__logo-link {
+
+}
+
+.header__logo-pic {
+
+}
+
+.header__nav {
+	height: 55px !important;
+}
+
+.header__nav-list {
+
+}
+
+.header__nav-item {
+	display: inline-block;
+	margin: 0 20px;
+	padding-top: 15px;
+	height: 55px;
+	&:hover {
+		border-bottom: 4px solid #0071c8;
+	}
+}
+
+.header__nav-link {
+	color: #fff;
+	font-size: 14px;
+	height: 100%;
+	&:hover{
+		text-decoration: none;
+		color: #fff;
+	}
+	&:focus {
+		text-decoration: none;
+		color: #fff;
+	}
+}
+
+.nav>li>a {
+	padding: 0;
+}
+
+.navbar-collapse {
+	padding: 0;
+}
+
+.navbar {
+	border: 0 none;
+}
+
+.navbar-default {
+	background-color: transparent;
+}
+
+.navbar-default .navbar-nav>li>a {
+	color: #fff;
+	&:hover {
+		color: #fff;
+	}
+}
+
+.navbar-header {
+	width: 300px !important;
+}
+
+// header bottom
+.header__bottom {
+	min-height: 660px;
+	background: url('../img/bg-banner.png') no-repeat center top/cover;
+}
+
+
+
+
+
+
+.empty {
+	height: 73px;
+}
+// section footer
+.footer {
+	position: relative;
+	margin-top: -73px;
+	min-height: 73px;
+	background-color: #000;
+	font-size: 14px;
+	color: #fff;
+}
+
+.footer .row {
+	border-top: 1px solid #282828;
+	padding: 18px 20px;
+	@include tablets {
+		text-align: center;
+	}
+}
+
+.footer__conf {
+	float: left;
+	color: #fff;
+	&:hover {
+			text-decoration: none;
+	}
+	@include tablets {
+		float: none;
+	}
+}
+
+.footer__copy {
+	float: right;
+	@include tablets {
+		float: none;
+	}
+}
