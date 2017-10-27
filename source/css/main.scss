@@ -239,18 +239,33 @@ p {
 // header
 .header {
 	background-color: #000;
-	height: 55px;
 	position: relative;
 	min-height: 715px;
 }
 
 .header .row {
-	height: 55px;
+	min-height: 55px;
+	@include clearfix;
+}
+
+.header__top {
+	min-height: 55px;
+	@include tablets {
+		min-height: auto;
+		height: 55px;
+	}
 }
 
 // header nav area
 .header__logo {
 	margin-top: 17px;
+	width: 130px;
+	@include laptop {
+		margin: 17px auto 0;
+	}
+	@include tablets {
+		margin: 17px 0;
+	}
 }
 
 .header__logo-link {
@@ -263,6 +278,17 @@ p {
 
 .header__nav {
 	height: 55px !important;
+	float: right;
+	@include laptop {
+		float: none;
+		margin-left: 20px;
+	}
+	@include tablets {
+		float: right;
+		margin-left: 0;
+		width: 210px !important;
+		margin-top: -58px;
+	}
 }
 
 .header__nav-list {
@@ -274,8 +300,28 @@ p {
 	margin: 0 20px;
 	padding-top: 15px;
 	height: 55px;
+	transition: border .3s;
 	&:hover {
+		transition: border .2s;
 		border-bottom: 4px solid #0071c8;
+	}
+	@include desktop {
+		padding: 15px 2px;
+		margin: 0 10px;
+	}
+	@include tablets {
+		height: auto;
+		border-bottom: 4px solid transparent;
+		padding: 0;
+		margin: 3px 15px;
+	}
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+	@include tablets {
+		width: 130px;
+		overflow: hidden;
+		margin-left: auto;
 	}
 }
 
@@ -295,10 +341,20 @@ p {
 
 .nav>li>a {
 	padding: 0;
+	@include tablets {
+		width: 170px;
+	}
 }
 
 .navbar-collapse {
 	padding: 0;
+}
+
+.navbar-nav {
+	float: right;
+	@include tablets {
+		// float: left;
+	}
 }
 
 .navbar {
@@ -314,10 +370,24 @@ p {
 	&:hover {
 		color: #fff;
 	}
+	&:focus {
+		color: #fff;
+	}
+	@include tablets {
+		padding-left: 40px;
+	}
+}
+
+.navbar-toggle {
+	margin-right: 0;
 }
 
 .navbar-header {
-	width: 300px !important;
+	// width: 300px !important;
+	@include tablets {
+		float: right;
+		padding-right: 0;
+	}
 }
 
 // header bottom
@@ -326,6 +396,73 @@ p {
 	background: url('../img/bg-banner.png') no-repeat center top/cover;
 }
 
+
+
+// colors area
+.colors {
+	position: relative;
+	background-color: #fff;
+	min-height: 743px;
+}
+
+
+// description area
+.descr {
+	position: relative;
+	background-color: #000;
+	min-height: 1000px;
+}
+
+
+// special area
+.special {
+	position: relative;
+	background-color: #fff;
+	min-height: 770px;
+}
+
+
+// video area
+.video {
+	position: relative;
+	background-color: #101010;
+	min-height: 1010px;
+}
+
+// equipment area
+.equipment {
+	position: relative;
+	background-color: #fff;
+	min-height: 645px;
+}
+
+// gallery area
+.gallery {
+	position: relative;
+	background-color: #101010;
+	min-height: 1015px;
+}
+
+// work area
+.work {
+	position: relative;
+	background: url('../img/pattern.png') no-repeat center top/cover;
+	min-height: 292px;
+}
+
+// reviews area
+.reviews {
+	position: relative;
+	background-color: #fff;
+	min-height: 592px;
+}
+
+// reminder area
+.reminder {
+	position: relative;
+	background-color: #000;
+	min-height: 590px;
+}
 
 
 
