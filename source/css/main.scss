@@ -241,6 +241,9 @@ p {
 	background-color: #000;
 	position: relative;
 	min-height: 715px;
+	@include tablets {
+		overflow: hidden;
+	}
 }
 
 .header .row {
@@ -264,6 +267,7 @@ p {
 		margin: 17px auto 0;
 	}
 	@include tablets {
+		z-index: 1;
 		margin: 17px 0;
 	}
 }
@@ -286,7 +290,7 @@ p {
 	@include tablets {
 		float: right;
 		margin-left: 0;
-		width: 210px !important;
+		width: 100%;
 		margin-top: -58px;
 	}
 }
@@ -312,8 +316,10 @@ p {
 	@include tablets {
 		height: auto;
 		border-bottom: 4px solid transparent;
-		padding: 0;
-		margin: 3px 15px;
+		padding: 3px 15px;
+		&:active {
+			border-bottom: 4px solid #0071c8;
+		}
 	}
 }
 
@@ -321,7 +327,15 @@ p {
 	@include tablets {
 		width: 130px;
 		overflow: hidden;
-		margin-left: auto;
+		margin-left: -3%;
+		margin-top: 52px;
+    width: 107%;
+    text-align: center;
+		border: 0 none;
+	}
+	@include phones {
+		margin-left: -6%;
+		width: 112%;
 	}
 }
 
@@ -342,7 +356,7 @@ p {
 .nav>li>a {
 	padding: 0;
 	@include tablets {
-		width: 170px;
+
 	}
 }
 
@@ -351,9 +365,9 @@ p {
 }
 
 .navbar-nav {
-	float: right;
 	@include tablets {
-		// float: left;
+		background-color: #000;
+		margin: 0px -15px;
 	}
 }
 
@@ -363,6 +377,9 @@ p {
 
 .navbar-default {
 	background-color: transparent;
+	@include phones {
+		background-color: #000;
+	}
 }
 
 .navbar-default .navbar-nav>li>a {
@@ -374,7 +391,7 @@ p {
 		color: #fff;
 	}
 	@include tablets {
-		padding-left: 40px;
+
 	}
 }
 
@@ -382,8 +399,21 @@ p {
 	margin-right: 0;
 }
 
+.navbar-default .navbar-toggle {
+	border: 0 none;
+	&:hover {
+		background-color: transparent;
+	}
+	&:focus {
+		background-color: transparent;
+	}
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: #fff;
+}
+
 .navbar-header {
-	// width: 300px !important;
 	@include tablets {
 		float: right;
 		padding-right: 0;
@@ -393,8 +423,55 @@ p {
 // header bottom
 .header__bottom {
 	min-height: 660px;
+	color: #fff;
 	background: url('../img/bg-banner.png') no-repeat center top/cover;
+	padding-top: 80px;
+	@include laptop {
+		padding-top: 55px;
+	}
 }
+
+.header__bottom-title {
+	font-size: 48px;
+	@include opensans(bold);
+	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: -4px;
+	@include laptop {
+		font-size: 36px;
+	}
+}
+
+.header__bottom-text {
+	font-size: 22px;
+	text-align: center;
+	margin: 0;
+	@include laptop {
+		font-size: 18px;
+	}
+}
+
+.header__bottom-item {
+
+}
+
+.header__bottom-pic {
+
+}
+
+.header__bottom-pic_item {
+
+}
+
+.header__bottom-list {
+
+}
+
+.header__bottom-list_item {
+
+}
+
+
 
 
 

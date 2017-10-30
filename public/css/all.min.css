@@ -84,6 +84,12 @@ p {
   min-height: 715px;
 }
 
+@media screen and (max-width: 768px) {
+  .header {
+    overflow: hidden;
+  }
+}
+
 .header .row {
   min-height: 55px;
 }
@@ -122,6 +128,7 @@ p {
 
 @media screen and (max-width: 768px) {
   .header__logo {
+    z-index: 1;
     margin: 17px 0;
   }
 }
@@ -142,7 +149,7 @@ p {
   .header__nav {
     float: right;
     margin-left: 0;
-    width: 210px !important;
+    width: 100%;
     margin-top: -58px;
   }
 }
@@ -175,8 +182,11 @@ p {
   .header__nav-item {
     height: auto;
     border-bottom: 4px solid transparent;
-    padding: 0;
-    margin: 3px 15px;
+    padding: 3px 15px;
+  }
+
+  .header__nav-item:active {
+    border-bottom: 4px solid #0071c8;
   }
 }
 
@@ -185,7 +195,19 @@ p {
   .navbar-default .navbar-form {
     width: 130px;
     overflow: hidden;
-    margin-left: auto;
+    margin-left: -3%;
+    margin-top: 52px;
+    width: 107%;
+    text-align: center;
+    border: 0 none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar-default .navbar-collapse,
+  .navbar-default .navbar-form {
+    margin-left: -6%;
+    width: 112%;
   }
 }
 
@@ -209,18 +231,15 @@ p {
   padding: 0;
 }
 
-@media screen and (max-width: 768px) {
-  .nav > li > a {
-    width: 170px;
-  }
-}
-
 .navbar-collapse {
   padding: 0;
 }
 
-.navbar-nav {
-  float: right;
+@media screen and (max-width: 768px) {
+  .navbar-nav {
+    background-color: #000;
+    margin: 0px -15px;
+  }
 }
 
 .navbar {
@@ -229,6 +248,12 @@ p {
 
 .navbar-default {
   background-color: transparent;
+}
+
+@media screen and (max-width: 480px) {
+  .navbar-default {
+    background-color: #000;
+  }
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -243,14 +268,24 @@ p {
   color: #fff;
 }
 
-@media screen and (max-width: 768px) {
-  .navbar-default .navbar-nav > li > a {
-    padding-left: 40px;
-  }
-}
-
 .navbar-toggle {
   margin-right: 0;
+}
+
+.navbar-default .navbar-toggle {
+  border: 0 none;
+}
+
+.navbar-default .navbar-toggle:hover {
+  background-color: transparent;
+}
+
+.navbar-default .navbar-toggle:focus {
+  background-color: transparent;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #fff;
 }
 
 @media screen and (max-width: 768px) {
@@ -262,7 +297,41 @@ p {
 
 .header__bottom {
   min-height: 660px;
+  color: #fff;
   background: url("../img/bg-banner.png") no-repeat center top/cover;
+  padding-top: 80px;
+}
+
+@media screen and (max-width: 992px) {
+  .header__bottom {
+    padding-top: 55px;
+  }
+}
+
+.header__bottom-title {
+  font-size: 48px;
+  font-family: 'OpenSansBold';
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: -4px;
+}
+
+@media screen and (max-width: 992px) {
+  .header__bottom-title {
+    font-size: 36px;
+  }
+}
+
+.header__bottom-text {
+  font-size: 22px;
+  text-align: center;
+  margin: 0;
+}
+
+@media screen and (max-width: 992px) {
+  .header__bottom-text {
+    font-size: 18px;
+  }
 }
 
 .colors {
