@@ -81,14 +81,25 @@
 	}
 }
 
-@mixin vertical-gradient($top-color: #ffffff, $bottom-color: #000000) {
-	background-color: $top-color;
-	background-image: -webkit-gradient(linear, left top, left bottom, from($top-color), to($bottom-color)); /* Chrome, Safari 4+ */
-	background-image: -webkit-linear-gradient(top, $top-color, $bottom-color); /* Chrome 10-25, iOS 5+, Safari 5.1+ */
-	background-image: -moz-linear-gradient(top, $top-color, $bottom-color); /* Firefox 3.6-15 */
-	background-image: -o-linear-gradient(top, $top-color, $bottom-color); /* Opera 11.10-12.00 */
-	background-image: linear-gradient(to bottom, $top-color, $bottom-color); /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=$top-color, EndColorStr=$bottom-color);
+@mixin vertical-gradient {
+	background: rgba(248,80,50,1);
+	background: -moz-linear-gradient(top, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 0%, rgba(0,171,254,1) 0%, rgba(0,130,195,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(248,80,50,1)), color-stop(0%, rgba(241,111,92,1)), color-stop(0%, rgba(0,171,254,1)), color-stop(100%, rgba(0,130,195,1)));
+	background: -webkit-linear-gradient(top, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 0%, rgba(0,171,254,1) 0%, rgba(0,130,195,1) 100%);
+	background: -o-linear-gradient(top, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 0%, rgba(0,171,254,1) 0%, rgba(0,130,195,1) 100%);
+	background: -ms-linear-gradient(top, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 0%, rgba(0,171,254,1) 0%, rgba(0,130,195,1) 100%);
+	background: linear-gradient(to bottom, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 0%, rgba(0,171,254,1) 0%, rgba(0,130,195,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f85032', endColorstr='#0082c3', GradientType=0 );
+	&:hover {
+		background: rgba(248,80,50,1);
+		background: -moz-linear-gradient(top, rgba(248,80,50,1) 0%, rgba(0,169,254,1) 0%, rgba(0,130,195,1) 0%, rgba(0,130,195,1) 0%, rgba(0,169,254,1) 100%);
+		background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(248,80,50,1)), color-stop(0%, rgba(0,169,254,1)), color-stop(0%, rgba(0,130,195,1)), color-stop(0%, rgba(0,130,195,1)), color-stop(100%, rgba(0,169,254,1)));
+		background: -webkit-linear-gradient(top, rgba(248,80,50,1) 0%, rgba(0,169,254,1) 0%, rgba(0,130,195,1) 0%, rgba(0,130,195,1) 0%, rgba(0,169,254,1) 100%);
+		background: -o-linear-gradient(top, rgba(248,80,50,1) 0%, rgba(0,169,254,1) 0%, rgba(0,130,195,1) 0%, rgba(0,130,195,1) 0%, rgba(0,169,254,1) 100%);
+		background: -ms-linear-gradient(top, rgba(248,80,50,1) 0%, rgba(0,169,254,1) 0%, rgba(0,130,195,1) 0%, rgba(0,130,195,1) 0%, rgba(0,169,254,1) 100%);
+		background: linear-gradient(to bottom, rgba(248,80,50,1) 0%, rgba(0,169,254,1) 0%, rgba(0,130,195,1) 0%, rgba(0,130,195,1) 0%, rgba(0,169,254,1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f85032', endColorstr='#00a9fe', GradientType=0 );
+	}
 }
 
 @mixin transform($transforms...) {
@@ -491,10 +502,13 @@ p {
 	padding-left: 5.5%;
 	@include desktop {
 		width: 100%;
+		padding-left: 9.5%;
+	}
+	@include laptop {
 		padding-left: 2.5%;
 	}
 	@include tablets {
-
+		// padding-left: 2.5%;
 	}
 }
 
@@ -633,6 +647,16 @@ p {
 	border: 2px solid #00a8fb;
 }
 
+.footer__form-button_wrap {
+	@include phones {
+		position: relative;
+		top: 47px;
+		height: 55px !important;
+		width: 210px !important;
+		margin-top: -30px !important;
+	}
+}
+
 .footer__form-button {
 	height: 55px;
 	width: 100%;
@@ -642,24 +666,7 @@ p {
 	border: 0 none;
 	width: 355px;
 	font-size: 16px;
-	background: rgba(248,80,50,1);
-	background: -moz-linear-gradient(top, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 0%, rgba(0,171,254,1) 0%, rgba(0,130,195,1) 100%);
-	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(248,80,50,1)), color-stop(0%, rgba(241,111,92,1)), color-stop(0%, rgba(0,171,254,1)), color-stop(100%, rgba(0,130,195,1)));
-	background: -webkit-linear-gradient(top, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 0%, rgba(0,171,254,1) 0%, rgba(0,130,195,1) 100%);
-	background: -o-linear-gradient(top, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 0%, rgba(0,171,254,1) 0%, rgba(0,130,195,1) 100%);
-	background: -ms-linear-gradient(top, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 0%, rgba(0,171,254,1) 0%, rgba(0,130,195,1) 100%);
-	background: linear-gradient(to bottom, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 0%, rgba(0,171,254,1) 0%, rgba(0,130,195,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f85032', endColorstr='#0082c3', GradientType=0 );
-	&:hover {
-		background: rgba(248,80,50,1);
-		background: -moz-linear-gradient(top, rgba(248,80,50,1) 0%, rgba(0,169,254,1) 0%, rgba(0,130,195,1) 0%, rgba(0,130,195,1) 0%, rgba(0,169,254,1) 100%);
-		background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(248,80,50,1)), color-stop(0%, rgba(0,169,254,1)), color-stop(0%, rgba(0,130,195,1)), color-stop(0%, rgba(0,130,195,1)), color-stop(100%, rgba(0,169,254,1)));
-		background: -webkit-linear-gradient(top, rgba(248,80,50,1) 0%, rgba(0,169,254,1) 0%, rgba(0,130,195,1) 0%, rgba(0,130,195,1) 0%, rgba(0,169,254,1) 100%);
-		background: -o-linear-gradient(top, rgba(248,80,50,1) 0%, rgba(0,169,254,1) 0%, rgba(0,130,195,1) 0%, rgba(0,130,195,1) 0%, rgba(0,169,254,1) 100%);
-		background: -ms-linear-gradient(top, rgba(248,80,50,1) 0%, rgba(0,169,254,1) 0%, rgba(0,130,195,1) 0%, rgba(0,130,195,1) 0%, rgba(0,169,254,1) 100%);
-		background: linear-gradient(to bottom, rgba(248,80,50,1) 0%, rgba(0,169,254,1) 0%, rgba(0,130,195,1) 0%, rgba(0,130,195,1) 0%, rgba(0,169,254,1) 100%);
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f85032', endColorstr='#00a9fe', GradientType=0 );
-	}
+	@include vertical-gradient;
 	@include desktop {
 		height: 45px;
 	}
@@ -667,7 +674,10 @@ p {
 		width: 340px;
 	}
 	@include phones {
-		width: 278px;
+		width: 210px;
+		height: 55px;
+		position: absolute;
+		margin-bottom: 0 !important;
 	}
 }
 
@@ -756,8 +766,18 @@ p {
 	}
 	@include phones {
 		margin-top: 35px;
-		margin-bottom: 35px;
+		// margin-bottom: 35px;
 		padding-left: 0;
+	}
+}
+
+.background__button {
+	display: none;
+	@include phones {
+		display: block;
+		width: 100%;
+		height: 50px;
+		background-color: #fff;
 	}
 }
 
@@ -776,6 +796,19 @@ p {
 	margin-top: 55px;
 	text-align: center;
 	margin-bottom: 18px;
+	@include phones {
+		display: none;
+	}
+}
+
+.colors__title-phone {
+	display: none;
+	@include phones {
+		display: block;
+		font-size: 24px;
+		text-align: center;
+		@include opensans(semi);
+	}
 }
 
 .colors__blue-line {
@@ -784,38 +817,222 @@ p {
 	background-color: #0071c8;
 	margin: 0 auto;
 	margin-bottom: 20px;
+	@include phones {
+		width: 155px;
+	}
 }
 
 .colors__text {
 	@include opensans(light);
 	font-size: 22px;
 	text-align: center;
-	margin: 0 auto;
+	margin: 0 auto 55px;
 	width: 560px;
+	@include laptop {
+		width: auto;
+	}
+	@include phones {
+		font-size: 16px;
+		width: auto;
+	}
 }
 
 .colors__gallery {
-
+	// position: relative;
+	text-align: center;
 }
 
 .colors__gallery-item {
+	display: inline-block;
+}
 
+.colors__gallery-pic {
+	margin: 0 30px;
+	height: 315px;
+	width: 250px;
+	position: relative;
 }
 
 .colors__gallery-pic_item {
-
+	@include absolute-center;
+	max-width: 99%;
+	max-height: 99%;
 }
 
 .colors__gallery-text {
-
+	text-align: center;
+	font-size: 18px;
+	@include opensans(light);
+	margin-top: 25px;
 }
 
-
+// section buy
 .buy {
 	position: relative;
 	background-color: #f4f4f4;
 	min-height: 162px;
 }
+
+.buy .row	{
+	@include clearfix;
+	@include phones {
+		text-align: center;
+	}
+}
+
+.buy-inline {
+	display: inline-block;
+}
+
+.buy__counter {
+	@include opensans(light);
+	text-align: center;
+	margin-top: 25px;
+	margin-left: 100px;
+	float: left;
+	@include desktop {
+		margin-left: 0;
+	}
+	@include phones {
+		float: none;
+		margin-top: 15px;
+	}
+}
+
+.buy__counter-title {
+	font-size: 24px;
+}
+
+.buy__counter-old {
+	@include opensans(light);
+	font-size: 18px;
+	color: #bababa;
+	position: relative;
+}
+
+.buy__counter-old_line {
+	position: absolute;
+	height: 1px;
+	background-color: #bababa;
+	width: 100%;
+	top: 14px;
+	left: 0;
+}
+
+.buy__counter-new {
+	color: #00abff;
+	font-size: 24px;
+	margin-left: 4px;
+}
+
+.buy__counter-num {
+	@include opensans(semi);
+	font-size: 30px;
+}
+
+.buy__counter-num_first {
+
+}
+
+.buy__counter-num_second {
+
+}
+
+.buy__counter-num_third {
+
+}
+
+.buy__counter-text {
+	font-size: 16px;
+}
+
+.buy__colors {
+	float: left;
+	margin-left: 150px;
+	margin-top: 32px;
+	@include clearfix;
+	@include desktop {
+		margin-left: 120px;
+	}
+	@include laptop {
+		margin-left: 45px;
+	}
+	@include phones {
+		margin-left: 0;
+		float: none;
+		margin-top: 42px;
+		text-align: center;
+		.checkbox__wrap {
+			float: none;
+		}
+	}
+}
+
+.buy__colors {
+	& .regular-checkbox + label {
+		margin: 0 12px;
+	}
+}
+
+.buy__colors-text {
+	padding-left: 17px;
+	font-size: 16px;
+	margin-bottom: 23px;
+	@include phones {
+		padding-left: 0;
+	}
+}
+
+.buy__button-wrap {
+	position: relative;
+	width: 205px;
+	height: 57px;
+	float: left;
+	margin-top: 55px;
+	margin-left: 140px;
+	@include desktop {
+		margin-left: 110px;
+	}
+	@include laptop {
+		margin-left: 25px;
+	}
+	@include phones {
+		float: none;
+		margin: 4px auto 0;
+		top: 28px;
+		left: 0;
+		z-index: 1;
+	}
+}
+
+.buy__button {
+	width: 205px;
+	height: 57px;
+	border-radius: 50px;
+	border: 0 none;
+	@include vertical-gradient;
+	@include opensans(bold);
+	font-size: 16px;
+	color: #fff;
+	text-transform: uppercase;
+	@include phones {
+		margin-left: 0;
+		position: absolute;
+		left: 0;
+	}
+}
+
+.background__button-buy {
+	display: none;
+	@include phones {
+		display: block;
+		width: 100%;
+		height: 50px;
+		background-color: #000;
+	}
+}
+
+
 
 // description area
 .descr {
