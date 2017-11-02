@@ -103,20 +103,26 @@
 						<div class="colors__title-phone">Цветовые решения</div>
 						<div class="all__blue-line"></div>
 						<p class="colors__text">Зачастую создатели копий предлагают лишь один вариант цвета. Наши реплики реализуются с тремя вариантами расцветки, которые в точности повторяют красоту оригинала.</p>
-						<ul class="colors__gallery owl-carousel" id="colors-gallery">
-							<li class="colors__gallery-item">
-								<div class="colors__gallery-pic"><img src="public/img/silver.png" alt="" class="colors__gallery-pic_item"></div>
-								<p class="colors__gallery-text">SILVER</p>
-							</li>
-							<li class="colors__gallery-item">
-								<div class="colors__gallery-pic"><img src="public/img/blue.png" alt="" class="colors__gallery-pic_item"></div>
-								<p class="colors__gallery-text">BLUE</p>
-							</li>
-							<li class="colors__gallery-item">
-								<div class="colors__gallery-pic"><img src="public/img/gold.png" alt="" class="colors__gallery-pic_item"></div>
-								<p class="colors__gallery-text">GOLD</p>
-							</li>
-						</ul>
+						<div class="colors__gallery-wrap">
+							<ul class="colors__gallery" id="colors-gallery">
+								<li class="colors__gallery-item">
+									<div class="colors__gallery-pic"><img src="public/img/silver.png" alt="" class="colors__gallery-pic_item"></div>
+									<p class="colors__gallery-text">SILVER</p>
+								</li>
+								<li class="colors__gallery-item">
+									<div class="colors__gallery-pic"><img src="public/img/blue.png" alt="" class="colors__gallery-pic_item"></div>
+									<p class="colors__gallery-text">BLUE</p>
+								</li>
+								<li class="colors__gallery-item">
+									<div class="colors__gallery-pic"><img src="public/img/gold.png" alt="" class="colors__gallery-pic_item"></div>
+									<p class="colors__gallery-text">GOLD</p>
+								</li>
+							</ul>
+							<ul class="colors__navs">
+								<li class="colors__navs-left"></li>
+								<li class="colors__navs-right"></li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -314,12 +320,27 @@
 						<p class="gallery__title section" data-section="gallery">Галерея</p>
 						<div class="all__blue-line"></div>
 						<p class="gallery__text">Жизнь переполнена яркими моментами. Снимите их с помощью камеры Galaxy S8</p>
-						<ul class="gallery__list owl-carousel" id="main-gallery">
-							<li class="gallery__list-item"><img src="public/img/gallery/11g.png" alt="" class="gallery__list-item_pic"></li>
-							<li class="gallery__list-item"><img src="public/img/gallery/12g.png" alt="" class="gallery__list-item_pic"></li>
-							<li class="gallery__list-item"><img src="public/img/gallery/13g.png" alt="" class="gallery__list-item_pic"></li>
-							<li class="gallery__list-item"><img src="public/img/gallery/14g.png" alt="" class="gallery__list-item_pic"></li>
-							<li class="gallery__list-item"><img src="public/img/gallery/15g.png" alt="" class="gallery__list-item_pic"></li>
+						<ul class="gallery__list" id="main-gallery">
+							<li class="gallery__list-item">
+								<img src="public/img/gallery/11g.png" alt="" class=" gallery__list-item_pic">
+								<img src="public/img/gallery/11g-mob.png" alt="" class=" gallery__list-item_pic-mob">
+							</li>
+							<li class="gallery__list-item">
+								<img src="public/img/gallery/12g.png" alt="" class=" gallery__list-item_pic">
+								<img src="public/img/gallery/12g-mob.png" alt="" class=" gallery__list-item_pic-mob">
+							</li>
+							<li class="gallery__list-item">
+								<img src="public/img/gallery/13g.png" alt="" class=" gallery__list-item_pic">
+								<img src="public/img/gallery/13g-mob.png" alt="" class=" gallery__list-item_pic-mob">
+							</li>
+							<li class="gallery__list-item">
+								<img src="public/img/gallery/14g.png" alt="" class=" gallery__list-item_pic">
+								<img src="public/img/gallery/14g-mob.png" alt="" class=" gallery__list-item_pic-mob">
+							</li>
+							<li class="gallery__list-item">
+								<img src="public/img/gallery/15g.png" alt="" class=" gallery__list-item_pic">
+								<img src="public/img/gallery/15g-mob.png" alt="" class=" gallery__list-item_pic-mob">
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -450,7 +471,7 @@
 								<span class="old__line-through"></span>
 								</span>
 							</li>
-							<li class="header__bottom-list_form">
+							<li class="header__bottom-list_form reminder__list-form">
 								<form class="order-form" action="" method="POST" accepted-charset="utf-8">
 				         <input type="hidden" name="country" value="name="country" ">
 				         <input type="hidden" name="key" value="key">

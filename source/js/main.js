@@ -7,88 +7,96 @@ $(document).ready(function() {
   // GALLERY
   // gallery colors
 
-    colorsGallery.owlCarousel({
-      loop:true,
-      margin: 20,
-      items: 3,
-      center: true,
-      // dots: true,
-      nav: true,
-      autoWidth: true,
-      // navContainer: '.reviews__slider-link',
-      // dotsContainer: '.reviews__items-list',
-      responsiveClass:true
-      // responsive:{
-      //     0:{
-      //         items: 1,
-      //         margin: 200,
-      //         loop: true,
-      //         autoWidth: true,
-      //         autoplay: true,
-      //         center: true,
-      //         dots: false
-      //     },
-      //     500:{
-      //         items:1,
-      //         loop: true,
-      //         autoWidth: true,
-      //         margin: 200,
-      //         center: true,
-      //         autoplay: false,
-      //         dots: false
-      //     },
-      //     768:{
-      //         items:1,
-      //         loop:true,
-      //         autoWidth: true,
-      //         center: true,
-      //         // autoWidth: false,
-      //         dots: true
-      //     }
-      // }
-  });
+  // gallery in colors area
+  $(window).on('load resize', function() {
+    var screenWidth = $(window).width(),
+        isLaptop = screenWidth < 992;
+        
+    if (isLaptop) {
+      colorsGallery.addClass('owl-carousel');
+      colorsGallery.owlCarousel({
+        // dotsContainer: '.reviews__items-list',
+        responsiveClass:true,
+        responsive:{
+            0:{
+                items: 1,
+                margin: 50,
+                loop: true,
+                nav: true,
+                autoWidth: true,
+                navContainer: '.colors__navs',
+                autoplay: true,
+                center: true,
+                dots: false
+            },
+            480:{
+                loop:true,
+                margin: 100,
+                items: 1,
+                center: true,
+                dots: false,
+                nav: true,
+                autoWidth: true,
+                navContainer: '.colors__navs'
+            },
+            768:{
+                loop:true,
+                margin: 200,
+                items: 2,
+                center: true,
+                dots: false,
+                nav: true,
+                autoWidth: true,
+                navContainer: '.colors__navs'
+            }
+        }
+      });
+    } else {
+       colorsGallery.removeClass('owl-carousel');
+    }
+  })
 
   // main gallery
-    mainGallery.owlCarousel({
-      loop:true,
-      margin: 300,
-      items: 1,
-      center: true,
-      // dots: true,
-      nav: true,
-      autoWidth: true,
-      // navContainer: '.reviews__slider-link',
-      // dotsContainer: '.reviews__items-list',
-      responsiveClass:true
-      // responsive:{
-      //     0:{
-      //         items: 1,
-      //         margin: 200,
-      //         loop: true,
-      //         autoWidth: true,
-      //         autoplay: true,
-      //         center: true,
-      //         dots: false
-      //     },
-      //     500:{
-      //         items:1,
-      //         loop: true,
-      //         autoWidth: true,
-      //         margin: 200,
-      //         center: true,
-      //         autoplay: false,
-      //         dots: false
-      //     },
-      //     768:{
-      //         items:1,
-      //         loop:true,
-      //         autoWidth: true,
-      //         center: true,
-      //         // autoWidth: false,
-      //         dots: true
-      //     }
-      // }
-  });
+  //   mainGallery.owlCarousel({
+  //     loop:true,
+  //     margin: 300,
+  //     items: 1,
+  //     center: true,
+  //     // dots: true,
+  //     nav: true,
+  //     autoWidth: true,
+  //     // navContainer: '.reviews__slider-link',
+  //     // dotsContainer: '.reviews__items-list',
+  //     responsiveClass:true
+  //     // responsive:{
+  //     //     0:{
+  //     //         items: 1,
+  //     //         margin: 200,
+  //     //         loop: true,
+  //     //         autoWidth: true,
+  //     //         autoplay: true,
+  //     //         center: true,
+  //     //         dots: false
+  //     //     },
+  //     //     500:{
+  //     //         items:1,
+  //     //         loop: true,
+  //     //         autoWidth: true,
+  //     //         margin: 200,
+  //     //         center: true,
+  //     //         autoplay: false,
+  //     //         dots: false
+  //     //     },
+  //     //     768:{
+  //     //         items:1,
+  //     //         loop:true,
+  //     //         autoWidth: true,
+  //     //         center: true,
+  //     //         // autoWidth: false,
+  //     //         dots: true
+  //     //     }
+  //     // }
+  // });
 
 
   // reviews gallery
@@ -96,6 +104,7 @@ $(document).ready(function() {
       loop:true,
       margin: 40,
       items: 3,
+      autoplay: true,
       center: true,
       dots: true,
       // nav: true,
@@ -151,9 +160,14 @@ $(document).ready(function() {
   })();
 
 
-  // form
+  // checkbox in top form
   $( '.header__bottom-list_form input[name=name_last]' ).closest( '.form-group' ).after(
-    '<div class="form-group form-group__checkbox"><p class="form-group__text">Выберите цвет:</p><div class="checkbox__wrap"><input type="checkbox" id="checkbox-1-1" class="regular-checkbox" /><label for="checkbox-1-1" class="first"></label><input type="checkbox" checked id="checkbox-1-2" class="regular-checkbox" /><label for="checkbox-1-2" class="second"></label><input type="checkbox" id="checkbox-1-3" class="regular-checkbox" /><label for="checkbox-1-3" class="third"></label></div></div>'
+    '<div class="form-group form-group__checkbox form-group__checkbox-top"><p class="form-group__text">Выберите цвет:</p><div class="checkbox__wrap"><input type="checkbox" id="checkbox-1-1" class="regular-checkbox" /><label for="checkbox-1-1" class="first"></label><input type="checkbox" checked id="checkbox-1-2" class="regular-checkbox" /><label for="checkbox-1-2" class="second"></label><input type="checkbox" id="checkbox-1-3" class="regular-checkbox" /><label for="checkbox-1-3" class="third"></label></div></div>'
+  );
+
+  // checkbox in bottom form
+  $( '.reminder__list-form input[name=name_last]' ).closest( '.form-group' ).after(
+    '<div class="form-group form-group__checkbox"><p class="form-group__text">Выберите цвет:</p><div class="checkbox__wrap"><input type="checkbox" id="checkbox-4-1" class="regular-checkbox" /><label for="checkbox-4-1" class="first"></label><input type="checkbox" checked id="checkbox-4-2" class="regular-checkbox" /><label for="checkbox-4-2" class="second"></label><input type="checkbox" id="checkbox-4-3" class="regular-checkbox" /><label for="checkbox-4-3" class="third"></label></div></div>'
   );
 
   $( '.header__bottom-list_form select[name=size]' ).addClass( 'footer__form-size' );
