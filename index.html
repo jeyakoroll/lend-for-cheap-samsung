@@ -68,7 +68,7 @@
 								<div class="header__bottom-pic"><img src="public/img/phones.png" alt="" class="header__bottom-pic_item"></div>
 								<ul class="header__bottom-list">
 									<li class="header__bottom-list_item">Закажи свой Galaxy S8</li>
-									<li class="header__bottom-list_price">
+									<li class="header__bottom-list_price" data-section="top">
 										<span class="new">2500 грн</span><span class="old">5000 грн
 										<span class="old__line-through"></span>
 										</span>
@@ -149,7 +149,7 @@
 							</div>
 						</div>
 						<div class="buy__button-wrap">
-							<button class="buy__button">Заказать</button>
+							<button class="buy__button buy__button-top" data-form="top">Заказать</button>
 						</div>
 					</div>
 				</div>
@@ -286,7 +286,7 @@
 							</div>
 						</div>
 						<div class="buy__button-wrap">
-							<button class="buy__button">Заказать</button>
+							<button class="buy__button buy__button-bottom" data-form="bottom">Заказать</button>
 						</div>
 					</div>
 				</div>
@@ -320,28 +320,29 @@
 						<p class="gallery__title section" data-section="gallery">Галерея</p>
 						<div class="all__blue-line"></div>
 						<p class="gallery__text">Жизнь переполнена яркими моментами. Снимите их с помощью камеры Galaxy S8</p>
-						<ul class="gallery__list" id="main-gallery">
-							<li class="gallery__list-item">
-								<img src="public/img/gallery/11g.png" alt="" class=" gallery__list-item_pic">
-								<img src="public/img/gallery/11g-mob.png" alt="" class=" gallery__list-item_pic-mob">
-							</li>
-							<li class="gallery__list-item">
-								<img src="public/img/gallery/12g.png" alt="" class=" gallery__list-item_pic">
-								<img src="public/img/gallery/12g-mob.png" alt="" class=" gallery__list-item_pic-mob">
-							</li>
-							<li class="gallery__list-item">
-								<img src="public/img/gallery/13g.png" alt="" class=" gallery__list-item_pic">
-								<img src="public/img/gallery/13g-mob.png" alt="" class=" gallery__list-item_pic-mob">
-							</li>
-							<li class="gallery__list-item">
-								<img src="public/img/gallery/14g.png" alt="" class=" gallery__list-item_pic">
-								<img src="public/img/gallery/14g-mob.png" alt="" class=" gallery__list-item_pic-mob">
-							</li>
-							<li class="gallery__list-item">
-								<img src="public/img/gallery/15g.png" alt="" class=" gallery__list-item_pic">
-								<img src="public/img/gallery/15g-mob.png" alt="" class=" gallery__list-item_pic-mob">
-							</li>
-						</ul>
+						<div class="gallery__list-wrap">
+							<ul class="gallery__list owl-carousel owl-theme" id="main-gallery">
+								<li class="gallery__list-item">
+									<img src="public/img/gallery/11g.png" alt="" class=" gallery__list-item_pic gallery__list-item_pic-one">
+								</li>
+								<li class="gallery__list-item">
+									<img src="public/img/gallery/12g.png" alt="" class=" gallery__list-item_pic gallery__list-item_pic-two">
+								</li>
+								<li class="gallery__list-item">
+									<img src="public/img/gallery/13g.png" alt="" class=" gallery__list-item_pic gallery__list-item_pic-three">
+								</li>
+								<li class="gallery__list-item">
+									<img src="public/img/gallery/14g.png" alt="" class=" gallery__list-item_pic gallery__list-item_pic-four">
+								</li>
+								<li class="gallery__list-item">
+									<img src="public/img/gallery/15g.png" alt="" class=" gallery__list-item_pic gallery__list-item_pic-five">
+								</li>
+							</ul>
+							<ul class="gallery__navs">
+								<li class="gallery__navs-left"></li>
+								<li class="gallery__navs-right"></li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -466,7 +467,7 @@
 						</div><!-- wrap for counter -->
 						<ul class="reminder__form header__bottom-list">
 							<li class="header__bottom-list_item">Закажи свой Galaxy S8</li>
-							<li class="header__bottom-list_price">
+							<li class="header__bottom-list_price reminder__bottom-list_price" data-section="bottom">
 								<span class="new">2500 грн</span><span class="old">5000 грн
 								<span class="old__line-through"></span>
 								</span>

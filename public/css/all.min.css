@@ -1598,8 +1598,44 @@ p {
   .special__pic {
     height: 320px;
     width: 350px;
-    left: 35.2%;
+    left: 35%;
     top: 29%;
+  }
+}
+
+@media screen and (max-width: 1140px) {
+  .special__pic {
+    left: 34.5%;
+  }
+}
+
+@media screen and (max-width: 1110px) {
+  .special__pic {
+    left: 34%;
+  }
+}
+
+@media screen and (max-width: 1090px) {
+  .special__pic {
+    left: 33.5%;
+  }
+}
+
+@media screen and (max-width: 1060px) {
+  .special__pic {
+    left: 33%;
+  }
+}
+
+@media screen and (max-width: 1030px) {
+  .special__pic {
+    left: 32.5%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .special__pic {
+    left: 32%;
   }
 }
 
@@ -1989,10 +2025,24 @@ p {
   background-color: #101010;
   min-height: 1015px;
   color: #fff;
+  padding-bottom: 70px;
 }
 
 .gallery .all__blue-line {
   margin: 20px auto;
+}
+
+@media screen and (max-width: 1200px) {
+  .gallery {
+    min-height: 0;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .gallery {
+    padding-bottom: 50px;
+  }
 }
 
 .gallery__title {
@@ -2002,12 +2052,24 @@ p {
   margin-top: 65px;
 }
 
+@media screen and (max-width: 992px) {
+  .gallery__title {
+    margin-top: 45px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .gallery__title {
+    margin-top: 34px;
+  }
+}
+
 .gallery__text {
   font-size: 22px;
   width: 575px;
   margin: 0 auto;
   text-align: center;
-  margin-bottom: 85px;
+  margin-bottom: 25px;
 }
 
 @media screen and (max-width: 768px) {
@@ -2016,15 +2078,128 @@ p {
   }
 }
 
+.gallery__list-wrap {
+  position: relative;
+  margin: 0 auto;
+  display: block;
+  width: 90%;
+}
+
+@media screen and (max-width: 480px) {
+  .gallery__list-wrap {
+    width: 83%;
+  }
+}
+
+.gallery__list {
+  text-align: center;
+  width: 100%;
+  position: relative;
+  display: block;
+}
+
+@media screen and (max-width: 768px) {
+  .gallery__list {
+    margin: 0 auto;
+    width: 92%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .gallery__list {
+    width: 100%;
+  }
+}
+
+.gallery__navs {
+  position: absolute;
+  display: block;
+  width: 104%;
+  left: -2%;
+  height: 28px;
+  top: 44%;
+}
+
+.gallery__navs .owl-next {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  width: 14px;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.gallery__navs .owl-prev {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  width: 14px;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .gallery__navs {
+    position: absolute;
+    display: block;
+    width: 104%;
+    left: -2%;
+    height: 24px;
+    top: 39%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .gallery__navs {
+    top: 32%;
+    width: 111%;
+    left: -5.5%;
+  }
+}
+
+.gallery__navs-left {
+  position: absolute;
+  height: 100%;
+  width: 14px;
+  background: url("../img/sprite-nav.png") no-repeat top left;
+  left: 0;
+}
+
+.gallery__navs-right {
+  position: absolute;
+  height: 100%;
+  width: 14px;
+  background: url("../img/sprite-nav.png") no-repeat top right;
+  right: 0;
+}
+
 .gallery__list-item {
   position: relative;
-  max-width: 1140px;
+  display: block;
+  width: 1140px;
   height: 640px;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 1200px) {
   .gallery__list-item {
     height: 500px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .gallery__list-item {
+    height: 450px;
+    width: 900px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .gallery__list-item {
+    height: 300px;
+    width: 500px;
   }
 }
 
@@ -2042,32 +2217,9 @@ p {
   bottom: 0;
   margin: auto;
   position: absolute;
+  display: block;
   max-width: 99%;
   max-height: 99%;
-}
-
-@media screen and (max-width: 480px) {
-  .gallery__list-item_pic {
-    display: none;
-  }
-}
-
-.gallery__list-item_pic-mob {
-  display: none;
-}
-
-@media screen and (max-width: 480px) {
-  .gallery__list-item_pic-mob {
-    display: block;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    position: absolute;
-    max-width: 99%;
-    max-height: 99%;
-  }
 }
 
 .work {
@@ -2133,7 +2285,7 @@ p {
 
 @media screen and (max-width: 480px) {
   .work__list-item {
-    width: 190px;
+    width: 170px;
   }
 }
 
@@ -2197,6 +2349,12 @@ p {
   margin-bottom: 65px;
 }
 
+@media screen and (max-width: 1200px) {
+  .reviews__title {
+    margin-bottom: 45px;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .reviews__title {
     font-size: 24px;
@@ -2217,6 +2375,18 @@ p {
 
 .reviews__list:after {
   clear: both;
+}
+
+@media screen and (max-width: 1200px) {
+  .reviews__list {
+    width: 98%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .reviews__list {
+    width: 85%;
+  }
 }
 
 .reviews__list-item {

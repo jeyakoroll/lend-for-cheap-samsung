@@ -5,8 +5,6 @@ $(document).ready(function() {
   
 
   // GALLERY
-  // gallery colors
-
   // gallery in colors area
   $(window).on('load resize', function() {
     var screenWidth = $(window).width(),
@@ -15,7 +13,6 @@ $(document).ready(function() {
     if (isLaptop) {
       colorsGallery.addClass('owl-carousel');
       colorsGallery.owlCarousel({
-        // dotsContainer: '.reviews__items-list',
         responsiveClass:true,
         responsive:{
             0:{
@@ -57,89 +54,52 @@ $(document).ready(function() {
   })
 
   // main gallery
-  //   mainGallery.owlCarousel({
-  //     loop:true,
-  //     margin: 300,
-  //     items: 1,
-  //     center: true,
-  //     // dots: true,
-  //     nav: true,
-  //     autoWidth: true,
-  //     // navContainer: '.reviews__slider-link',
-  //     // dotsContainer: '.reviews__items-list',
-  //     responsiveClass:true
-  //     // responsive:{
-  //     //     0:{
-  //     //         items: 1,
-  //     //         margin: 200,
-  //     //         loop: true,
-  //     //         autoWidth: true,
-  //     //         autoplay: true,
-  //     //         center: true,
-  //     //         dots: false
-  //     //     },
-  //     //     500:{
-  //     //         items:1,
-  //     //         loop: true,
-  //     //         autoWidth: true,
-  //     //         margin: 200,
-  //     //         center: true,
-  //     //         autoplay: false,
-  //     //         dots: false
-  //     //     },
-  //     //     768:{
-  //     //         items:1,
-  //     //         loop:true,
-  //     //         autoWidth: true,
-  //     //         center: true,
-  //     //         // autoWidth: false,
-  //     //         dots: true
-  //     //     }
-  //     // }
-  // });
+    mainGallery.owlCarousel({
+      loop:true,
+      margin: 200,
+      items: 1,
+      center: true,
+      dots: true,
+      nav: true,
+      autoWidth: true,
+      navContainer: '.gallery__navs',
+      responsiveClass:true
+  });
 
 
   // reviews gallery
     reviewsGallery.owlCarousel({
-      loop:true,
-      margin: 40,
-      items: 3,
-      autoplay: true,
-      center: true,
-      dots: true,
-      // nav: true,
-      autoWidth: true,
-      // navContainer: '.reviews__slider-link',
-      // dotsContainer: '.reviews__items-list',
-      responsiveClass:true
-      // responsive:{
-      //     0:{
-      //         items: 1,
-      //         margin: 200,
-      //         loop: true,
-      //         autoWidth: true,
-      //         autoplay: true,
-      //         center: true,
-      //         dots: false
-      //     },
-      //     500:{
-      //         items:1,
-      //         loop: true,
-      //         autoWidth: true,
-      //         margin: 200,
-      //         center: true,
-      //         autoplay: false,
-      //         dots: false
-      //     },
-      //     768:{
-      //         items:1,
-      //         loop:true,
-      //         autoWidth: true,
-      //         center: true,
-      //         // autoWidth: false,
-      //         dots: true
-      //     }
-      // }
+      responsiveClass:true,
+      responsive:{
+          0:{
+              items: 1,
+              margin: 200,
+              loop: true,
+              autoWidth: true,
+              autoplay: true,
+              center: true,
+              nav: false,
+              dots: true
+          },
+          768:{
+              items:1,
+              loop: true,
+              autoWidth: true,
+              margin: 200,
+              center: true,
+              autoplay: true,
+              dots: true
+          },
+          992:{
+              loop:true,
+              margin: 40,
+              items: 3,
+              autoplay: true,
+              center: true,
+              dots: true,
+              autoWidth: true,
+          }
+      }
   });
 
 
@@ -192,6 +152,64 @@ $(document).ready(function() {
         
     contentButton = isPhone ? contentButton.empty().text('Заказать') : contentButton.empty().text('Заказать по акции');
   })
+  
+  // change src of gallery image in phone size
+  // $(window).on('load resize', function() {
+  //   var screenWidth = $(window).width(),
+  //       isPhone = screenWidth < 480;
+        
+  //       if (isPhone) {
+  //         $('.gallery__list-item_pic-one').attr('src', 'public/img/gallery/11g-mob.png');
+  //         $('.gallery__list-item_pic-two').attr('src', 'public/img/gallery/12g-mob.png');
+  //         $('.gallery__list-item_pic-three').attr('src', 'public/img/gallery/13g-mob.png');
+  //         $('.gallery__list-item_pic-four').attr('src', 'public/img/gallery/14g-mob.png');
+  //         $('.gallery__list-item_pic-five').attr('src', 'public/img/gallery/15g-mob.png');
+  //       }
+  // })
+
+  // hide mobile menu
+  $('.navbar-collapse').on('click', hideSendwichMenu);
+  $(document).on('click', hideSendwichMenu);
+
+  function hideSendwichMenu () {
+      $('.navbar-collapse').collapse('hide');
+  }
+
+  // show top form
+  $('.buy__button-top').on('click', showTopForm);
+
+  function showTopForm (e) {
+      e.preventDefault();
+      toTopForm($(this).data('form'), true);
+  }
+
+  function toTopForm(section, isAnimate) {
+      var 
+          reqSection = $('.header__bottom-list_price').filter('[data-section="' + section +'"]'),
+          reqSectionPos = reqSection.offset().top - 55;
+
+      if (isAnimate) {
+        $('body, html').animate({scrollTop: reqSectionPos}, 350);
+      }
+  }
+
+  // show bottom form
+  $('.buy__button-bottom').on('click', showBottomForm);
+
+  function showBottomForm (e) {
+      e.preventDefault();
+      toBottomForm($(this).data('form'), true);
+  }
+
+  function toBottomForm(section, isAnimate) {
+      var 
+          reqSection = $('.reminder__bottom-list_price').filter('[data-section="' + section +'"]'),
+          reqSectionPos = reqSection.offset().top;
+
+      if (isAnimate) {
+        $('body, html').animate({scrollTop: reqSectionPos}, 350);
+      }
+  }
 
   // sticky menu
   $('.header__nav-link').on('click', function(e) {
