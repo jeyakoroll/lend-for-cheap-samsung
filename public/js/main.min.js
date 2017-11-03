@@ -186,7 +186,7 @@ $(document).ready(function() {
   function toTopForm(section, isAnimate) {
       var 
           reqSection = $('.header__bottom-list_price').filter('[data-section="' + section +'"]'),
-          reqSectionPos = reqSection.offset().top - 55;
+          reqSectionPos = reqSection.offset().top - 85;
 
       if (isAnimate) {
         $('body, html').animate({scrollTop: reqSectionPos}, 350);

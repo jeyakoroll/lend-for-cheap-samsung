@@ -302,13 +302,6 @@ p {
 	}
 }
 
-.header__logo-link {
-
-}
-
-.header__logo-pic {
-
-}
 
 .header__nav {
 	height: 55px !important;
@@ -323,10 +316,6 @@ p {
 		width: 100%;
 		margin-top: -58px;
 	}
-}
-
-.header__nav-list {
-
 }
 
 .header__nav-item {
@@ -350,6 +339,12 @@ p {
 		&:active {
 			border-bottom: 4px solid #0071c8;
 		}
+	}
+}
+
+.header__nav-item_mob {
+	@include tablets {
+		display: none !important;
 	}
 }
 
@@ -549,6 +544,9 @@ p {
 		margin: 15px auto 5px;
 		height: 206px;
 		width: 286px;
+	}
+	@include main(300px) {
+		width: 265px;
 	}
 }
 
@@ -1044,18 +1042,37 @@ p {
 .buy__counter-num {
 	@include opensans(semi);
 	font-size: 30px;
+	margin-top: 10px;
+}
+
+.buy__counter-num_center {
+	position: absolute;
+	top: -4px;
+	left: 29%;
 }
 
 .buy__counter-num_first {
-
+	background-color: #fff;
+	width: 40px;
+	height: 40px;
+	border-radius: 5px;
+	position: relative;
 }
 
 .buy__counter-num_second {
-
+	background-color: #fff;
+	width: 40px;
+	height: 40px;
+	border-radius: 5px;
+	position: relative;
 }
 
 .buy__counter-num_third {
-
+	background-color: #fff;
+	width: 40px;
+	height: 40px;
+	border-radius: 5px;
+	position: relative;
 }
 
 .buy__counter-text {
@@ -1268,6 +1285,7 @@ p {
 
 .descr__list-item_text {
 	font-size: 16px;
+	padding-left: 22%;
 }
 
 .descr__back-pic {
@@ -1315,6 +1333,7 @@ p {
 
 .special .row {
 	padding-left: 100px;
+	position: relative;
 	@include desktop {
 		padding-left: 0;
 	}
@@ -1333,6 +1352,8 @@ p {
 	}
 	@include tablets {
 		font-size: 24px;
+		margin: 30px auto;
+		width: 90%;
 	}
 }
 
@@ -1370,26 +1391,8 @@ p {
 	@include desktop {
 		height: 320px;
     width: 350px;
-    left: 35%;
+    left: 32%;
     top: 29%;
-	}
-	@include main(1140px) {
-		left: 34.5%;
-	}
-	@include main(1110px) {
-		left: 34%;
-	}
-	@include main(1090px) {
-		left: 33.5%;
-	}
-	@include main(1060px) {
-		left: 33%;
-	}
-	@include main(1030px) {
-		left: 32.5%;
-	}
-	@include main(1000px) {
-		left: 32%;
 	}
 	@include laptop {
 		display: none;
@@ -1403,8 +1406,8 @@ p {
 }
 
 .special__list-left {
-	float: left;
 	max-width: 330px;
+	float: left;
 	position: relative;
 	z-index: 1;
 	@include laptop {

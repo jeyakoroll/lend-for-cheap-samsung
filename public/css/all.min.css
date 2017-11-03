@@ -209,6 +209,12 @@ p {
 }
 
 @media screen and (max-width: 768px) {
+  .header__nav-item_mob {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
   .navbar-default .navbar-collapse,
   .navbar-default .navbar-form {
     width: 130px;
@@ -465,6 +471,12 @@ p {
     margin: 15px auto 5px;
     height: 206px;
     width: 286px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .header__bottom-pic {
+    width: 265px;
   }
 }
 
@@ -1126,6 +1138,40 @@ p {
 .buy__counter-num {
   font-family: 'OpenSansSemiBold';
   font-size: 30px;
+  margin-top: 10px;
+}
+
+.buy__counter-num_center {
+  position: absolute;
+  top: -4px;
+  left: 29%;
+}
+
+.buy__counter-num_first {
+  background-color: #fff;
+  width: 40px;
+  height: 40px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.buy__counter-num_second {
+  background-color: #fff;
+  width: 40px;
+  height: 40px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.buy__counter-num_third {
+  background-color: #fff;
+  width: 40px;
+  height: 40px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  position: relative;
 }
 
 .buy__counter-text {
@@ -1445,6 +1491,7 @@ p {
 
 .descr__list-item_text {
   font-size: 16px;
+  padding-left: 22%;
 }
 
 .descr__back-pic {
@@ -1510,6 +1557,7 @@ p {
 
 .special .row {
   padding-left: 100px;
+  position: relative;
 }
 
 @media screen and (max-width: 1200px) {
@@ -1540,6 +1588,8 @@ p {
 @media screen and (max-width: 768px) {
   .special__title {
     font-size: 24px;
+    margin: 30px auto;
+    width: 90%;
   }
 }
 
@@ -1598,44 +1648,8 @@ p {
   .special__pic {
     height: 320px;
     width: 350px;
-    left: 35%;
-    top: 29%;
-  }
-}
-
-@media screen and (max-width: 1140px) {
-  .special__pic {
-    left: 34.5%;
-  }
-}
-
-@media screen and (max-width: 1110px) {
-  .special__pic {
-    left: 34%;
-  }
-}
-
-@media screen and (max-width: 1090px) {
-  .special__pic {
-    left: 33.5%;
-  }
-}
-
-@media screen and (max-width: 1060px) {
-  .special__pic {
-    left: 33%;
-  }
-}
-
-@media screen and (max-width: 1030px) {
-  .special__pic {
-    left: 32.5%;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .special__pic {
     left: 32%;
+    top: 29%;
   }
 }
 
@@ -1657,8 +1671,8 @@ p {
 }
 
 .special__list-left {
-  float: left;
   max-width: 330px;
+  float: left;
   position: relative;
   z-index: 1;
 }

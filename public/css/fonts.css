@@ -1,13 +1,3 @@
-	@font-face {
-			font-family: "RussoOneRegular";
-			src: url("../fonts/RussoOneRegular/RussoOneRegular.eot");
-			src: url("../fonts/RussoOneRegular/RussoOneRegular.eot?#iefix")format("embedded-opentype"),
-			url("../fonts/RussoOneRegular/RussoOneRegular.woff") format("woff"),
-			url("../fonts/RussoOneRegular/RussoOneRegular.ttf") format("truetype");
-			font-style: normal;
-			font-weight: normal;
-	}
-
 @font-face {
 			font-family: "OpenSansRegular";
 			src: url("../fonts/OpenSansRegular/OpenSansRegular.eot");
@@ -44,16 +34,6 @@
 			src: url("../fonts/OpenSansSemiBold/OpenSansSemiBold.eot?#iefix")format("embedded-opentype"),
 			url("../fonts/OpenSansSemiBold/OpenSansSemiBold.woff") format("woff"),
 			url("../fonts/OpenSansSemiBold/OpenSansSemiBold.ttf") format("truetype");
-			font-style: normal;
-			font-weight: normal;
-	}
-
-	@font-face {
-			font-family: "UbuntuCondensedRegular";
-			src: url("../fonts/UbuntuCondensedRegular/UbuntuCondensedRegular.eot");
-			src: url("../fonts/UbuntuCondensedRegular/UbuntuCondensedRegular.eot?#iefix")format("embedded-opentype"),
-			url("../fonts/UbuntuCondensedRegular/UbuntuCondensedRegular.woff") format("woff"),
-			url("../fonts/UbuntuCondensedRegular/UbuntuCondensedRegular.ttf") format("truetype");
 			font-style: normal;
 			font-weight: normal;
 	}
