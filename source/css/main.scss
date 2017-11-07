@@ -2248,24 +2248,24 @@ p {
 }
 
 .dots__timer-left {
-	position: absolute;
-	height: 6px;
-	width: 3px;
-	background: url('../img/dots-timer.png') no-repeat;
-	left: 32%;
-  top: 21%;
+  position: absolute;
+  height: 6px;
+  width: 3px;
+  background: url(../img/dots-timer.png) no-repeat;
+  left: 32.5%;
+  top: 27%;
   @include small_phones {
 		left: 31%;
 	}
 }
 
 .dots__timer-right {
-	position: absolute;
-	height: 6px;
-	width: 3px;
-	background: url('../img/dots-timer.png') no-repeat;
-	right: 32%;
-	top: 21%;
+  position: absolute;
+  height: 6px;
+  width: 3px;
+  background: url(../img/dots-timer.png) no-repeat;
+  right: 33%;
+  top: 27%;
 	@include small_phones {
 		right: 31%;
 	}
@@ -2290,10 +2290,10 @@ p {
 	display: flex;
 	justify-content: center;
   text-transform: uppercase;
- 	margin: 0 10px;
+ 	margin: 0 8px;
   font-size: 11px;
   @include main(480px) {
-  	width: 62px;
+  	width: 64px;
   }
   @include main(330) {
   	width: 48px;
@@ -2322,8 +2322,9 @@ p {
   	font-size: 3rem;
   }
   @include main(330px) {
-  	width: 25px;
+  	width: 28px;
   	height: 4.3rem;
+  	margin: 0 2px;
   	line-height: 1.4rem;
   	font-size: 2.7rem;
   }
