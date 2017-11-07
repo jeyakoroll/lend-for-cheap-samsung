@@ -255,7 +255,8 @@ p {
 .header {
 	background-color: #000;
 	position: relative;
-	min-height: 715px;
+	width: 100%;
+	min-height: 720px;
 	@include laptop {
 		min-height: 0;
 		height: auto;
@@ -266,8 +267,12 @@ p {
 }
 
 .header .row {
-	min-height: 55px;
+	// width: 100%;
+	position: relative;
 	@include clearfix;
+	@include tablets {
+		width: 106%;
+	}
 }
 
 .header__top {
@@ -276,8 +281,14 @@ p {
 	position: fixed;
 	z-index: 5;
 	width: 100%;
-	@include laptop {
-		// width: auto;
+	& .row {
+		min-height: 55px;
+		@include phones {
+			width: 112%;
+		}
+	}
+	@include desktop {
+		// position: relative;
 	}
 	@include tablets {
 		position: relative;
@@ -290,11 +301,18 @@ p {
 .header__logo {
 	margin-top: 17px;
 	width: 130px;
+	margin-left: 20px;
 	@include laptop {
 		margin: 17px auto 0;
+		display: none;
+		margin-left: 0;
 	}
 	@include tablets {
+		display: block;
 		z-index: 1;
+		margin: 17px auto;
+	}
+	@include main(760px) {
 		margin: 17px 0;
 	}
 	@include phones {
@@ -305,6 +323,7 @@ p {
 
 .header__nav {
 	height: 55px !important;
+	position: relative;
 	float: right;
 	@include laptop {
 		float: none;
@@ -322,7 +341,7 @@ p {
 	display: inline-block;
 	margin: 0 20px;
 	padding-top: 15px;
-	height: 55px;
+	height: 54px;
 	transition: border .3s;
 	&:hover {
 		transition: border .2s;
@@ -335,7 +354,7 @@ p {
 	@include tablets {
 		height: auto;
 		border-bottom: 4px solid transparent;
-		padding: 3px 15px;
+		padding: 3px 10px;
 		&:active {
 			border-bottom: 4px solid #0071c8;
 		}
@@ -343,7 +362,7 @@ p {
 }
 
 .header__nav-item_mob {
-	@include tablets {
+	@include laptop {
 		display: none !important;
 	}
 }
@@ -379,9 +398,12 @@ p {
 }
 
 .nav>li>a {
-	padding: 0;
-	@include tablets {
+	padding: 0; 
+}
 
+.nav>li {
+	@include main(760px) {
+		margin-left: -2%;
 	}
 }
 
@@ -392,13 +414,20 @@ p {
 .navbar-nav {
 	float: right;
 	@include laptop {
+		padding-left: 0;
 		float: none;
 		margin: 0 auto;
+		width: fit-content;
 	}
 	@include tablets {
 		float: none;
+		padding-left: 5%;
+		width: 106%;
 		background-color: #000;
 		margin: 0px -15px;
+	}
+	@include phones {
+		width: 107%;
 	}
 }
 
@@ -454,15 +483,24 @@ p {
 
 // header bottom
 .header__bottom {
-	min-height: 660px;
+	min-height: 720px;
 	color: #fff;
 	background: url('../img/bg-banner.png') no-repeat center top/cover;
-	padding-top: 80px;
+	padding-top: 140px;
+	.row {
+		@include phones {
+			margin: 0 auto;
+			width: 100%;
+		}
+	}
 	@include laptop {
-		padding-top: 45px;
+		padding-top: 55px;
 		min-height: 0;
 		height: auto;
 		padding-bottom: 40px;
+	}
+	@include tablets {
+		padding-top: 45px;
 	}
 	@include phones {
 		padding-top: 30px;
@@ -481,11 +519,12 @@ p {
 		font-size: 36px;
 	}
 	@include tablets {
+		width: 95%;
 		font-size: 34px;
-		margin-bottom: 5px;
+		margin: 0 auto 5px;
 	}
 	@include phones {
-		font-size: 24px;
+		font-size: 22px;
 	}
 }
 
@@ -496,6 +535,8 @@ p {
 		font-size: 18px;
 	}
 	@include tablets {
+		width: 90%;
+		margin: 0 auto;
 		font-size: 16px;
 	}
 	@include phones {
@@ -510,7 +551,7 @@ p {
 	@include clearfix;
 	height: auto;
 	margin: 0 auto;
-	padding-left: 5.5%;
+	padding-left: 2.5%;
 	@include desktop {
 		width: 100%;
 		padding-left: 9.5%;
@@ -518,8 +559,8 @@ p {
 	@include laptop {
 		padding-left: 2.5%;
 	}
-	@include tablets {
-		// padding-left: 2.5%;
+	@include phones {
+		padding-left: 1%;
 	}
 }
 
@@ -534,7 +575,8 @@ p {
 		width: 380px;
 	}
 	@include laptop {
-		width: 340px;
+		width: 311px;
+		margin-top: 56px;
 	}
 	@include tablets {
 		margin: 25px auto;
@@ -554,6 +596,9 @@ p {
 	@include absolute-center;
 	max-width: 99%;
 	max-height: 99%;
+	@include phones {
+		left: -1px;
+	}
 }
 
 .header__bottom-list {
@@ -589,6 +634,16 @@ p {
 	}
 	@include phones {
 		display: none;
+	}
+}
+
+.footer__bottom-list_item {
+	text-transform: uppercase;
+	@include opensans(bold);
+	text-align: left;
+	padding-left: 30px;
+	@include desktop {
+		padding-left: 20px;
 	}
 }
 
@@ -748,8 +803,16 @@ p {
 	// color: #99a1a7;
 }
 
-.regular-checkbox:checked + label:after {
-	content: '\2714';
+// .regular-checkbox:checked + label:after {
+// 	content: '\2714';
+// 	font-size: 14px;
+// 	position: absolute;
+// 	top: 2px;
+// 	left: 8px;
+// 	color: #fff;
+// }
+
+.check__color-mark {
 	font-size: 14px;
 	position: absolute;
 	top: 2px;
@@ -818,17 +881,9 @@ p {
 	text-align: center;
 	margin-bottom: 18px;
 	@include phones {
-		display: none;
-	}
-}
-
-.colors__title-phone {
-	display: none;
-	@include phones {
 		display: block;
 		font-size: 24px;
-		text-align: center;
-		@include opensans(semi);
+		margin-top: 25px;
 	}
 }
 
@@ -970,12 +1025,20 @@ p {
 	position: relative;
 	background-color: #f4f4f4;
 	min-height: 162px;
+	padding-bottom: 20px;
+	@include tablets {
+		padding-bottom: 0;
+	}
 }
 
 .buy__bottom {
 	position: relative;
 	background-color: #f4f4f4;
 	min-height: 162px;
+	padding-bottom: 20px;
+	@include tablets {
+		padding-bottom: 0;
+	}
 	& .row {
 		@include clearfix;
 		@include phones {
@@ -1001,7 +1064,7 @@ p {
 .buy__counter {
 	@include opensans(light);
 	text-align: center;
-	margin-top: 25px;
+	margin-top: 15px;
 	margin-left: 100px;
 	float: left;
 	@include desktop {
@@ -1029,7 +1092,7 @@ p {
 	height: 1px;
 	background-color: #bababa;
 	width: 100%;
-	top: 14px;
+	top: 50%;
 	left: 0;
 }
 
@@ -1082,7 +1145,7 @@ p {
 .buy__colors {
 	float: left;
 	margin-left: 150px;
-	margin-top: 32px;
+	margin-top: 33px;
 	@include clearfix;
 	@include desktop {
 		margin-left: 120px;
@@ -1121,7 +1184,7 @@ p {
 	width: 205px;
 	height: 57px;
 	float: left;
-	margin-top: 55px;
+	margin-top: 51px;
 	margin-left: 140px;
 	@include desktop {
 		margin-left: 110px;
@@ -1191,7 +1254,7 @@ p {
 }
 
 .descr .row {
-	padding-left: 100px;
+	padding-left: 70px;
 	padding-bottom: 50px;
 	position: relative;
 	@include tablets {
@@ -1217,7 +1280,7 @@ p {
 	width: 555px;
 	font-size: 22px;
 	margin-bottom: 50px;
-	@include opensans(light);
+	@include opensans(jenya);
 	@include tablets {
 		font-size: 16px;
 		margin: 0 auto 50px;
@@ -1257,6 +1320,27 @@ p {
 	}
 }
 
+.display__bottom {
+	@include tablets {
+		margin-bottom: 25px;
+	}
+	@include main(493px) {
+		margin-bottom: 50px;
+	}
+	@include phones {
+		margin-bottom: 15px;
+	}
+}
+
+.memory__bottom {
+	@include main(727px) {
+		margin-bottom: 25px;
+	}
+	@include phones {
+		margin-bottom: 0;
+	}
+}
+
 .descr__list-pic {
 	float: left;
 	width: 70px;
@@ -1285,7 +1369,9 @@ p {
 
 .descr__list-item_text {
 	font-size: 16px;
-	padding-left: 22%;
+	@include main(370px) {
+		padding-left: 22%;
+	}
 }
 
 .descr__back-pic {
@@ -1329,10 +1415,13 @@ p {
 		height: auto;
 		padding-bottom: 50px;
 	}
+	@include phones {
+		padding-bottom: 40px;
+	}
 }
 
 .special .row {
-	padding-left: 100px;
+	padding-left: 70px;
 	position: relative;
 	@include desktop {
 		padding-left: 0;
@@ -1361,7 +1450,7 @@ p {
 	display: none;
 	@include laptop {
 		display: block;
-		margin: 0 auto 35px;
+		margin: 0 auto 15px;
 		width: 450px;
 		height: 300px;
 		background: url('../img/video-bg.png') no-repeat top/cover;
@@ -1387,12 +1476,12 @@ p {
 	height: 420px;
 	width: 455px;
 	position: absolute;
-	left: 35.5%;
+	left: 32.5%;
 	@include desktop {
 		height: 320px;
     width: 350px;
     left: 32%;
-    top: 29%;
+    top: 35%;
 	}
 	@include laptop {
 		display: none;
@@ -1435,7 +1524,9 @@ p {
 	@include opensans(jenya);
 	margin-bottom: 5px;
 	@include laptop { 
+		margin-top: 15px;
 		text-align: center;
+		margin-bottom: 0;
 	}
 	@include phones {
 		font-size: 20px;
@@ -1444,9 +1535,17 @@ p {
 
 .left_item-text {
 	font-size: 14px;
+	color: rgba(#000, .5);
 	@include opensans(jenya);
 	@include laptop {
-		display: none;
+		display: block;
+		text-align: center;
+	}
+	@include phones {
+		font-size: 13px;
+		width: 90%;
+		display: block;
+		margin: 0 auto;
 	}
 }
 
@@ -1456,7 +1555,12 @@ p {
 	float: right;
 	text-align: right;
 	max-width: 330px;
+	margin-right: 25px;
+	@include desktop {
+		margin-right: 0;
+	}
 	@include laptop { 
+		margin-right: 0;
 		float: none;
 		display: block;
 		margin: 0 auto;
@@ -1480,6 +1584,11 @@ p {
 	font-size: 24px;
 	@include opensans(jenya);
 	margin-bottom: 5px;
+	@include laptop {
+		text-align: center;
+		margin-top: 15px;
+		margin-bottom: 0;
+	}
 	@include phones {
 		font-size: 20px;
 	}
@@ -1487,9 +1596,17 @@ p {
 
 .right_item-text {
 	font-size: 14px;
+	color: rgba(#000, .5);
 	@include opensans(jenya);
 	@include laptop {
-		display: none;
+		display: block;
+		text-align: center;
+	}
+	@include phones {
+		font-size: 13px;
+		width: 90%;
+		display: block;
+		margin: 0 auto;
 	}
 }
 
@@ -1880,7 +1997,7 @@ p {
 		width: 160px;
 		height: 160px;
 	// width: 100%;
-	@include tablets {
+	@include laptop {
 		width: 140px;
 		height: 140px;
 	}
@@ -1940,7 +2057,7 @@ p {
 		width: 98%;
 	}
 	@include laptop {
-		width: 85%;
+		width: 83%;
 	}
 }
 
@@ -1971,6 +2088,10 @@ p {
 
 .reviews__list-item_text {
 	font-size: 14px;
+	@include main(400px) {
+		width: 90%;
+    margin: 0 auto;
+	}
 }
 
 .owl-theme .owl-dots .owl-dot span {
@@ -2114,6 +2235,7 @@ p {
 }
 .banner-info__item {
   width: 100%;
+  position: relative;
   max-width: 37rem;
   text-align: center;
   overflow: auto;
@@ -2124,6 +2246,31 @@ p {
   	max-width: 22rem;
   }
 }
+
+.dots__timer-left {
+	position: absolute;
+	height: 6px;
+	width: 3px;
+	background: url('../img/dots-timer.png') no-repeat;
+	left: 32%;
+  top: 21%;
+  @include small_phones {
+		left: 31%;
+	}
+}
+
+.dots__timer-right {
+	position: absolute;
+	height: 6px;
+	width: 3px;
+	background: url('../img/dots-timer.png') no-repeat;
+	right: 32%;
+	top: 21%;
+	@include small_phones {
+		right: 31%;
+	}
+}
+
 .timer, .time-name {
   float: right;
   width: 100%;

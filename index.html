@@ -24,7 +24,7 @@
 				<div class="header__top">
 					<div class="container">
 						<div class="row">
-							<div class="header__logo col-lg-2 col-md-2 col-lg-push-1">
+							<div class="header__logo col-lg-2 col-md-2">
 								<a href="#" class="header__logo-link">
 									<img src="public/img/logo.png" alt="" class="header__logo-pic">
 								</a>
@@ -75,7 +75,7 @@
 									</li>
 									<li class="header__bottom-list_form">
 										<form class="order-form" action="" method="POST" accepted-charset="utf-8">
-						         <input type="hidden" name="country" value="name="country" ">
+						         <input type="hidden" name="country" value="" name="country">
 						         <input type="hidden" name="key" value="key">
 						         	<div class="form-group">
 												<input type="text" class="form-control" name="name_first" id="name_first" required>
@@ -100,11 +100,10 @@
 				<div class="container">
 					<div class="row">
 						<p class="colors__title section" data-section="models">Несколько вариантов цветового исполнения</p>
-						<div class="colors__title-phone">Цветовые решения</div>
 						<div class="all__blue-line"></div>
 						<p class="colors__text">Зачастую создатели копий предлагают лишь один вариант цвета. Наши реплики реализуются с тремя вариантами расцветки, которые в точности повторяют красоту оригинала.</p>
 						<div class="colors__gallery-wrap">
-							<ul class="colors__gallery" id="colors-gallery">
+							<ul class="colors__gallery owl-carousel" id="colors-gallery">
 								<li class="colors__gallery-item">
 									<div class="colors__gallery-pic"><img src="public/img/silver.png" alt="" class="colors__gallery-pic_item"></div>
 									<p class="colors__gallery-text">SILVER</p>
@@ -145,7 +144,7 @@
 						<div class="buy__colors">
 							<p class="buy__colors-text">Выберите цвет:</p>
 							<div class="checkbox__wrap">
-								<input type="checkbox" id="checkbox-2-1" class="regular-checkbox" /><label for="checkbox-2-1" class="first"></label><input type="checkbox" checked id="checkbox-2-2" class="regular-checkbox" /><label for="checkbox-2-2" class="second"></label><input type="checkbox" id="checkbox-2-3" class="regular-checkbox" /><label for="checkbox-2-3" class="third"></label>
+								<input type="checkbox" id="checkbox-2-1" class="regular-checkbox" /><label for="checkbox-2-1" data-check="first" class="first check__color"><span class="check__color-mark"></span></label><input type="checkbox" checked id="checkbox-2-2" class="regular-checkbox" /><label for="checkbox-2-2" data-check="second" class="second check__color"><span class="check__color-mark">&#10004;</span></label><input type="checkbox" id="checkbox-2-3" class="regular-checkbox" /><label for="checkbox-2-3" data-check="third" class="third check__color"><span class="check__color-mark"></span></label>
 							</div>
 						</div>
 						<div class="buy__button-wrap">
@@ -188,12 +187,12 @@
 								<p class="descr__list-item_title">Батарея</p>
 								<p class="descr__list-item_text">Li-Ion 3000 мАч (Несъемная)</p>
 							</li>
-							<li class="descr__list-item">
+							<li class="descr__list-item display__bottom">
 								<div class="descr__list-pic"><img src="public/img/icons/6-icon.png" alt="" class="descr__list-pic_item"></div>
 								<p class="descr__list-item_title">Дисплей</p>
 								<p class="descr__list-item_text">5.8 дюймовый Super AMOLED. 2960 x 1440 пикселей</p>
 							</li>
-							<li class="descr__list-item">
+							<li class="descr__list-item memory__bottom">
 								<div class="descr__list-pic"><img src="public/img/icons/7-icon.png" alt="" class="descr__list-pic_item"></div>
 								<p class="descr__list-item_title">Память</p>
 								<p class="descr__list-item_text">Постоянная (ROM) 64 ГБ; Оперативная (RAM) 4 ГБ</p>
@@ -215,7 +214,9 @@
 				<div class="container">
 					<div class="row">
 						<p class="special__title section" data-section="special">Основные преимущества копии Samsung Galaxy S8</p>
-						<div class="special__video"></div>
+						<div class="special__video">
+							<iframe width="100%" height="100%" src="https://www.youtube.com/embed/D8Ert5yjMV4" frameborder="0" allowfullscreen></iframe>
+						</div>
 						<div class="special__bottom">
 							<ul class="special__list-left">
 								<li class="special__list-left_item">
@@ -259,7 +260,9 @@
 						<p class="video__title section" data-section="video">Видеообзор</p>
 						<div class="all__blue-line"></div>
 						<p class="video__text">Samsung Galaxy S8 переворачивает представление о классическом дизайне смартфона</p>
-						<div class="video__item"></div>
+						<div class="video__item">
+							<iframe width="100%" height="100%" src="https://www.youtube.com/embed/D8Ert5yjMV4" frameborder="0" allowfullscreen></iframe>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -282,7 +285,7 @@
 						<div class="buy__colors">
 							<p class="buy__colors-text">Выберите цвет:</p>
 							<div class="checkbox__wrap">
-								<input type="checkbox" id="checkbox-3-1" class="regular-checkbox" /><label for="checkbox-3-1" class="first"></label><input type="checkbox" checked id="checkbox-3-2" class="regular-checkbox" /><label for="checkbox-3-2" class="second"></label><input type="checkbox" id="checkbox-3-3" class="regular-checkbox" /><label for="checkbox-3-3" class="third"></label>
+								<input type="checkbox" id="checkbox-3-1" class="regular-checkbox" /><label for="checkbox-3-1" data-check="first" class="first check__color"><span class="check__color-mark"></span></label><input type="checkbox" checked id="checkbox-3-2" class="regular-checkbox" /><label for="checkbox-3-2" data-check="second" class="second check__color"><span class="check__color-mark">&#10004;</span></label><input type="checkbox" id="checkbox-3-3" class="regular-checkbox" /><label for="checkbox-3-3" data-check="third" class="third check__color"><span class="check__color-mark"></span></label>
 							</div>
 						</div>
 						<div class="buy__button-wrap">
@@ -443,6 +446,8 @@
 						<div class="reminder__counter">
 							<p class="header__bottom-counter_text">До конца акции осталось:</p>
 							<div class="banner-info__item center-block">
+								<div class="dots__timer-left"></div>
+								<div class="dots__timer-right"></div>
 							  <ul class="timer flex flex-center">
 							    <li>
 							      <div><span>2</span></div>
@@ -466,7 +471,7 @@
 							</div>
 						</div><!-- wrap for counter -->
 						<ul class="reminder__form header__bottom-list">
-							<li class="header__bottom-list_item">Закажи свой Galaxy S8</li>
+							<li class="header__bottom-list_item footer__bottom-list_item">Закажи свой Galaxy S8</li>
 							<li class="header__bottom-list_price reminder__bottom-list_price" data-section="bottom">
 								<span class="new">2500 грн</span><span class="old">5000 грн
 								<span class="old__line-through"></span>
@@ -474,7 +479,7 @@
 							</li>
 							<li class="header__bottom-list_form reminder__list-form">
 								<form class="order-form" action="" method="POST" accepted-charset="utf-8">
-				         <input type="hidden" name="country" value="name="country" ">
+				         <input type="hidden" name="country" value="" name="country">
 				         <input type="hidden" name="key" value="key">
 				         	<div class="form-group">
 										<input type="text" class="form-control" name="name_first" id="name_first" required>
